@@ -1,1 +1,545 @@
 
+# CCNA — Week 1 Documentation
+
+## 📚 Week 1: Networking Fundamentals & Cisco Basics
+
+This repository documents my Week 1 CCNA study and hands-on lab work. The focus of this week was building a foundation in computer networking, understanding Ethernet and network devices, learning how data moves through a network, and performing basic Cisco IOS configuration.
+
+---
+
+## 🎯 Learning Objectives
+
+By the end of Week 1, I worked on understanding:
+
+* Basic networking terminology
+* Bits and bytes
+* Network protocols and standards
+* Network devices and their roles
+* Ethernet and Ethernet standards
+* Network media and cabling
+* Data transmission and reception
+* OSI and TCP/IP networking concepts
+* Data encapsulation
+* Ethernet frames
+* MAC addresses
+* Basic Cisco IOS commands
+* Device hostname configuration
+* Enable passwords
+* Password encryption
+* Saving running configurations
+
+---
+
+# 1. Networking Fundamentals
+
+## What Is a Network?
+
+A computer network allows devices to communicate and exchange data with one another.
+
+Networks rely on standardized protocols and technologies so that different devices can communicate reliably.
+
+### Network Protocols
+
+Protocols are rules that define how devices communicate across a network.
+
+Examples include:
+
+* Ethernet
+* TCP/IP
+* HTTP
+* DNS
+* DHCP
+* SSH
+
+---
+
+# 2. Bits and Bytes
+
+Understanding how data is represented is fundamental to networking.
+
+### Basic Units
+
+| Unit         | Description                      |
+| ------------ | -------------------------------- |
+| Bit          | Binary digit: `0` or `1`         |
+| Byte         | 8 bits                           |
+| Kilobit (Kb) | Approximately 1,000 bits         |
+| Megabit (Mb) | Approximately 1,000,000 bits     |
+| Gigabit (Gb) | Approximately 1,000,000,000 bits |
+
+Network speeds are commonly expressed using **bits per second**.
+
+Examples:
+
+```text
+100 Mbps
+1 Gbps
+10 Gbps
+```
+
+It is important not to confuse:
+
+```text
+MB = Megabytes
+Mb = Megabits
+```
+
+---
+
+# 3. Network Devices
+
+Different devices perform different functions within a network.
+
+### Common Network Devices
+
+**Router**
+
+Connects different networks and determines where packets should be forwarded.
+
+**Switch**
+
+Connects devices within a local network and forwards Ethernet frames based on MAC addresses.
+
+**Host**
+
+A device participating in network communication, such as:
+
+* Computer
+* Server
+* Printer
+* Phone
+* IoT device
+
+---
+
+# 4. Ethernet
+
+Ethernet is one of the fundamental technologies used in modern local area networks.
+
+Ethernet is associated with the IEEE 802.3 standard.
+
+It defines how devices communicate over wired networks, including aspects such as:
+
+* Frames
+* MAC addresses
+* Physical media
+* Data transmission
+* Ethernet speeds
+
+---
+
+# 5. Ethernet Standards
+
+Ethernet has evolved through multiple generations.
+
+Examples include:
+
+| Standard            | Approximate Speed |
+| ------------------- | ----------------: |
+| Fast Ethernet       |          100 Mbps |
+| Gigabit Ethernet    |            1 Gbps |
+| 10 Gigabit Ethernet |           10 Gbps |
+
+Different Ethernet implementations can use different types of physical media.
+
+---
+
+# 6. Network Media
+
+Network communication can occur over different physical media.
+
+### Copper
+
+Copper Ethernet cables are commonly used for connecting network devices.
+
+### Fiber Optic
+
+Fiber uses light to transmit data and is commonly used for:
+
+* High-speed connections
+* Long-distance links
+* Network backbones
+
+Fiber can use different transmission modes, including:
+
+* Multimode fiber
+* Single-mode fiber
+
+---
+
+# 7. Network Connections
+
+A basic network can contain connections such as:
+
+```text
+PC → Switch → Router → Network
+```
+
+A switch can connect multiple hosts within a LAN.
+
+A router can connect the LAN to other networks.
+
+Understanding which device performs each function is an important CCNA foundation.
+
+---
+
+# 8. OSI Model and Network Layers
+
+Networking can be divided into layers to simplify how communication works.
+
+The OSI model contains seven layers:
+
+```text
+7. Application
+6. Presentation
+5. Session
+4. Transport
+3. Network
+2. Data Link
+1. Physical
+```
+
+Each layer has a specific role in network communication.
+
+### Important Layers for Week 1
+
+**Physical Layer**
+
+Responsible for transmitting raw bits over physical media.
+
+**Data Link Layer**
+
+Responsible for Ethernet frames and MAC addressing.
+
+**Network Layer**
+
+Responsible for logical addressing and routing.
+
+**Transport Layer**
+
+Provides transport services between applications.
+
+---
+
+# 9. TCP/IP Model
+
+The TCP/IP model provides another way of organizing networking functions.
+
+A simplified representation is:
+
+```text
+Application
+Transport
+Internet
+Network Access
+```
+
+The TCP/IP model and OSI model describe similar networking concepts using different layer structures.
+
+---
+
+# 10. Data Encapsulation
+
+When data moves through a network, information is added as it moves down the networking layers.
+
+A simplified process is:
+
+```text
+Application Data
+      ↓
+Transport Segment
+      ↓
+Network Packet
+      ↓
+Data Link Frame
+      ↓
+Bits
+```
+
+At the receiving device, the process occurs in reverse.
+
+```text
+Bits
+ ↓
+Frame
+ ↓
+Packet
+ ↓
+Segment
+ ↓
+Application Data
+```
+
+This process is known as **encapsulation** and **decapsulation**.
+
+---
+
+# 11. Ethernet Frames
+
+Ethernet transmits information using frames.
+
+A simplified Ethernet frame contains information such as:
+
+```text
+Destination MAC
+Source MAC
+Type/Length
+Data
+FCS
+```
+
+### MAC Addresses
+
+A MAC address identifies a network interface at the Data Link layer.
+
+Example format:
+
+```text
+00:1A:2B:3C:4D:5E
+```
+
+The destination MAC address identifies where the Ethernet frame should be delivered.
+
+The source MAC address identifies the device that sent the frame.
+
+---
+
+# 12. Ethernet Frame Fields
+
+Important Ethernet frame fields include:
+
+### Destination MAC Address
+
+Identifies the intended receiving device.
+
+### Source MAC Address
+
+Identifies the device that transmitted the frame.
+
+### Type/Length
+
+Provides information about the protocol or length associated with the frame.
+
+### Data
+
+Contains the encapsulated information.
+
+### FCS
+
+The Frame Check Sequence is used for error detection.
+
+---
+
+# 13. Basic Cisco IOS Configuration
+
+Week 1 also included hands-on Cisco device configuration.
+
+The lab involved configuring both a router and a switch.
+
+Example device naming:
+
+```text
+Router → R1
+Switch → SW1
+```
+
+---
+
+## 14. Configuring the Hostname
+
+Enter global configuration mode:
+
+```text
+enable
+configure terminal
+```
+
+Set the hostname:
+
+```text
+hostname R1
+```
+
+For the switch:
+
+```text
+hostname SW1
+```
+
+The hostname makes it easier to identify which device is being configured.
+
+---
+
+# 15. Configuring an Enable Password
+
+An initial unencrypted enable password can be configured with:
+
+```text
+enable password CCNA
+```
+
+This password protects access to privileged EXEC mode.
+
+---
+
+# 16. Checking the Running Configuration
+
+The running configuration can be viewed using:
+
+```text
+show running-config
+```
+
+This allows us to verify the current device configuration.
+
+---
+
+# 17. Encrypting Passwords
+
+Cisco IOS provides a command that encrypts plaintext passwords in the configuration:
+
+```text
+service password-encryption
+```
+
+After enabling this feature, passwords configured using certain password mechanisms are displayed differently in the running configuration.
+
+---
+
+# 18. Secure Enable Password
+
+A more secure enable password can be configured using:
+
+```text
+enable secret Cisco!
+```
+
+The `enable secret` command provides a stronger password mechanism than the basic `enable password`.
+
+If both are configured, the encrypted `enable secret` takes precedence when entering privileged EXEC mode.
+
+---
+
+# 19. Saving the Configuration
+
+The running configuration exists in RAM.
+
+To preserve the configuration after a reboot, it must be copied to startup configuration.
+
+```text
+copy running-config startup-config
+```
+
+or:
+
+```text
+write memory
+```
+
+Conceptually:
+
+```text
+Running Configuration
+        ↓
+Startup Configuration
+```
+
+---
+
+# 20. Week 1 Lab
+
+## Basic Cisco Device Configuration
+
+### Tasks Completed
+
+* [x] Configure router hostname
+* [x] Configure switch hostname
+* [x] Configure an enable password
+* [x] Test privileged EXEC password
+* [x] Display the running configuration
+* [x] Enable password encryption
+* [x] Configure an `enable secret`
+* [x] Test privileged EXEC access
+* [x] Examine password encryption in the configuration
+* [x] Save the running configuration
+
+### Example Configuration
+
+```cisco
+enable
+configure terminal
+
+hostname R1
+
+enable password CCNA
+
+service password-encryption
+
+enable secret Cisco!
+
+end
+
+show running-config
+
+copy running-config startup-config
+```
+
+The same general configuration process can be applied to the switch, using its appropriate hostname.
+
+---
+
+# 🧠 Key Takeaways
+
+Week 1 established the foundation for the rest of the CCNA journey.
+
+The most important concepts learned were:
+
+1. **Networks require standardized protocols.**
+2. **Bits and bytes represent digital information.**
+3. **Switches primarily operate within LANs and use MAC addresses to forward Ethernet frames.**
+4. **Routers connect different networks and make forwarding decisions.**
+5. **Ethernet is a major LAN technology based on IEEE 802.3.**
+6. **MAC addresses operate at the Data Link layer.**
+7. **IP addressing and routing operate at the Network layer.**
+8. **Data is encapsulated as it moves down the networking layers.**
+9. **Ethernet communication uses frames.**
+10. **Cisco IOS provides commands for configuring and verifying network devices.**
+11. **Running configuration should be saved to startup configuration to survive a reboot.**
+12. **`enable secret` is preferred over the basic `enable password`.**
+
+---
+
+# 📂 Repository Structure
+
+```text
+CCNA/
+│
+├── Week-01/
+│   ├── README.md
+│   ├── notes/
+│   ├── labs/
+│   │   └── basic-cisco-configuration.md
+│   └── screenshots/
+│
+└── README.md
+```
+
+---
+
+# 🚀 Next Steps
+
+For the next week, the goal is to build on these fundamentals by moving deeper into Cisco IOS configuration, switching, addressing, and network communication.
+
+This repository will be updated weekly as new CCNA concepts and labs are completed.
+
+---
+
+## 📌 Week 1 Status
+
+**Status:** Completed ✅
+
+**Focus:** Networking Fundamentals + Basic Cisco IOS
+
+**Hands-on:** Router and Switch Configuration
+
+**Next:** Continue building practical Cisco networking skills.
